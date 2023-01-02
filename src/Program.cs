@@ -1,4 +1,4 @@
-﻿// (c) 2022 BlindEye Softworks. All rights reserved.
+// (c) 2022 BlindEye Softworks. All rights reserved.
 
 using System;
 using System.Text;
@@ -31,7 +31,7 @@ namespace GetWinPK
                         break;
 
                     default:
-                        PrintError("An unexpected error has occured while locating the Advanced " +
+                        PrintError("An unexpected error has occurred while locating the Advanced " +
                             "Configuration & Power Interface (ACPI) Microsoft Data Management " +
                             "(MSDM) table in the firmware of your computer.", errorCode);
                         break;
@@ -40,9 +40,12 @@ namespace GetWinPK
             else
             {
                 IntPtr buffer = Marshal.AllocHGlobal((int)bufferSize);
+                
                 GetSystemFirmwareTable(ACPI, MSDM, buffer, bufferSize);
+                
                 var productKey = IntPtr.Add(buffer, (int)bufferSize - KEY_LENGTH);
                 var data = new byte[KEY_LENGTH];
+                
                 Marshal.Copy(productKey, data, 0, KEY_LENGTH);
                 Marshal.FreeHGlobal(buffer);
 
