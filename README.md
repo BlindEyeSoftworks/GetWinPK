@@ -7,5 +7,5 @@ The Windows activation system is designed to use an OEM activation key that's in
 The Microsoft Software Licensing Tables (SLIC and MSDM) specification can be found [here](https://learn.microsoft.com/en-us/previous-versions/windows/hardware/design/dn653305(v=vs.85)?redirectedfrom=MSDN).
 
 ### Minimum Requirements:
-- .NET Framework 4.6
-- Windows Vista or Windows Server 2008
+- Windows Vista or Windows Server 2008 
+- .NET Framework 4.6 
